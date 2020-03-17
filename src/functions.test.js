@@ -4,7 +4,11 @@
  * construct available in Javascript.
  */
 const max = (a, b) => {
-  if (a > b) {
+  if (isNaN(a)) {
+    return b
+  } else if (isNaN(b)) {
+    return a
+  } else if (a > b) {
     return a
   } else if (a < b) {
     return b
@@ -17,7 +21,11 @@ const max = (a, b) => {
  * numbers as arguments and returns the largest of them.
  */
 const maxOfThree = (a, b, c) => {
-  if (a > b && a > c) {
+  if (isNaN(a) && b > c) {
+    return b
+  } else if (isNaN(a) && b < c) {
+    return c
+  } else if (a > b && a > c) {
     return a
   } else if (b > a && b > c) {
     return b
