@@ -116,6 +116,16 @@ const reverse = str => {
  *
  * i.e. findLongestWord("book dogs") should return "book"
  */
+const findLongestWord = str => {
+  const arr = str.split(' ')
+  let longest = ''
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > longest.length) {
+      longest = arr[i]
+    }
+  }
+  return longest
+}
 
 // ...
 
