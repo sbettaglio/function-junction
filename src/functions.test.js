@@ -3,27 +3,50 @@
  * and returns the largest of them. Use the if-then-else
  * construct available in Javascript.
  */
-
+const max = (a, b) => {
+  if (a > b) {
+    return a
+  } else if (a < b) {
+    return b
+  }
+}
 // ...
 
 /**
  * 2) Define a function maxOfThree() that takes three
  * numbers as arguments and returns the largest of them.
  */
-
+const maxOfThree = (a, b, c) => {
+  if (a > b && a > c) {
+    return a
+  } else if (b > a && b > c) {
+    return b
+  } else if (c > a && c > b) {
+    return c
+  }
+}
 // ...
 
 /*
  * 3) Define a function sum() that takes two numbers as
  * arguments and computes the sum of those two numbers.
  */
-
+const sum = (a, b) => {
+  return a + b
+}
 // ...
 
 /*
  * 4) Define a function sumOfArray that calculates the sum of
  * all the numbers in an array.
  */
+const sumOfArray = a => {
+  let sum = 0
+  a.forEach(item => {
+    sum += item
+  })
+  return sum
+}
 
 // ...
 
@@ -31,6 +54,14 @@
  * 5) Write a function isVowel() that takes a character (i.e. a string of length 1)
  * and returns true if it is a vowel, false otherwise.
  */
+const isVowel = str => {
+  str = str.toLowerCase()
+  if (str === 'a' || str === 'e' || str === 'i' || str === 'o' || str === 'u') {
+    return true
+  } else {
+    return false
+  }
+}
 
 // ...
 
@@ -42,15 +73,40 @@
  * For example, rovarspraket("this is fun") should
  * return the string "tothohisos isos fofunon".
  */
+const rovarspraket = str => {
+  const arr = str.split('')
+  const sol = []
+  arr.forEach(char => {
+    if (
+      char !== 'a' &&
+      char !== 'e' &&
+      char !== 'i' &&
+      char !== 'o' &&
+      char !== 'u'
+    ) {
+      sol.push(`${char}o${char}`)
+    } else {
+      sol.push(char)
+    }
+  })
+  return sol
+    .toString()
+    .split(',')
+    .join('')
+}
 
 // ...
-
 /**
- * 7) Define a function reverse() that computes
- * the reversal of a string. For example,
+ * 7) Define a function reverse() that computes * the reversal of a string. For example,
  * reverse("skoob") should return the
  * string "books".
  */
+const reverse = str => {
+  return str
+    .split('')
+    .reverse()
+    .join('')
+}
 
 // ...
 
